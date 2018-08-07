@@ -62,18 +62,9 @@ Links:
   
 ## How to Run <a name="run"/>
 
-1. Download the dataset from the Kaggle[https://www.kaggle.com/mlg-ulb/creditcardfraud]
+1. Download the dataset from [Kaggle](https://www.kaggle.com/mlg-ulb/creditcardfraud).  Store the csv file into a Google Cloud bucket.  Change line 9 to the link of the csv file in the Google cloud bucket.
 
-1. Run train.py first in order to train the model.  The model is trained using images found online.  Create a csv file where the first column represents the link of the image and the second column represents the label of the image.  Store the csv file in a google bucket and change the link in line 13 to match the google cloud bucket you stored the csv file. 
-
-Lines 13 and 14 contains the following.
-``` Python
-training_data = CsvDataSet('gs://my-bucket/snake_images_train'
-			, schema='image_url:STRING,label:STRING')
-
-```
-
-2. In train.py set the bucket to where you want to store the preprocessed images and model.  Change lines 6-9 accordingly.  
+2. Follow the following instructions to deploy the model into a google cloud bucket.  https://cloud.google.com/ml-engine/docs/tensorflow/deploying-models
 
 3. Name the model and set the version number.  For example the model classifies subspecies of snake and the version of the model is 'beta1'.  
 
