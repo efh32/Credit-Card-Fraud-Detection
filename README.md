@@ -28,11 +28,13 @@ Links:
 
 ### File Information <a name="fileInfo"/>
 
-1. model.py - This is the model used 
+1. model.py - This is the model trained using the data from Kaggle.  
 
-2. validate.py - Imports images from the validation bucket.  Performs prediction on the validation images (test images).  
+2. test.py - Tests the model with a test numpy array.  For the second test, the numpy array is turned into a [protocol buffer](https://developers.google.com/protocol-buffers/docs/pythontutorial).  
 
-3. App Engine Folder - 
+3. test2.py -
+
+4. App Engine Folder - 
 
     1.  app.yaml - Configuration file for App Engine's settings.  
     2.  appengine_config.py - Copy third party libraries into application directory. 
@@ -61,8 +63,14 @@ Links:
 
   
 ## How to Run <a name="run"/>
+The following steps are performed in Google Cloud Datalab.  Refer to [this link](https://cloud.google.com/datalab/docs/quickstart) to get started with Datalab.  
 
 1. Download the dataset from [Kaggle](https://www.kaggle.com/mlg-ulb/creditcardfraud).  Store the csv file into a Google Cloud bucket.  Change line 9 to the link of the csv file in the Google cloud bucket.
+
+```Python
+creditcardcsv = #path to credit card fraud data
+df = pd.read_csv(StringIO(creditcardcsv))
+```
 
 2. Follow the following instructions to deploy the model into a google cloud bucket.  https://cloud.google.com/ml-engine/docs/tensorflow/deploying-models
 
